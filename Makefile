@@ -21,3 +21,6 @@ test: lint	## Run lint checks and unit tests
 format:		## Format code according to lint checks
 	black --line-length 120 app/ tests
 
+start-app:  ## Run flask app in docker container
+	docker build -t image_edges_api ./
+	docker run -p 8888:8888 image_edges_api
